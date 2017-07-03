@@ -6,4 +6,5 @@ class Product < ApplicationRecord
       with:    %r{\.(gif|jpg|png)\Z}i,
       message: 'La imagen debe ser archivo GIF, JPG o PNG.'
   }
+  validates :title, length: {minimum: 5}
 end
