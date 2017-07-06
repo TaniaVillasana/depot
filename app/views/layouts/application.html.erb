@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Chirp Sweet</title>
+    <title>Sortilegios Chirp </title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    '/assets/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag '/assets/application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body class="<%= controller.controller_name %>">
   <div id="banner">
-   <!-- <%= image_tag 'escudo.png', alt: 'Harry Potter' %>-->
+    <!--<%= image_tag 'escudo.png', alt: 'Harry Potter' %>-->
     <span class="title"><%= @page_title %></span>
   </div>
   <div id="columns">
     <div id="side">
 <!--referencia del diseño-->
-      <div id="cart">
-        <% if @cart %>
-            <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
-            <%= render @cart %>
-            <% end %>
-        <% end %>
-      </div>
+      <% if @cart %>
+          <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+              <%= render @cart %>
+          <% end %>
+      <% end %>
+
+      <!--Hacer orden en la barra lateral-->
+      <%= render Order.find(session[:order_id]) if session[:order_id] -%>
+
       <ul>
         <li><a href="http://www....">Home</a></li>
         <li><a href="http://www..../faq">Questions</a></li>
@@ -36,3 +38,4 @@
   </div>
   </body>
 </html>
+

@@ -18,6 +18,5 @@
 
 </table>
 
-
-<%= button_to 'Vaciar Carrito', cart, method: :delete,
-              data: { confirm: 'Are you sure?' } %>
+<%= button_to 'Revisar carrito', new_order_path, method: :get %>
+<%= button_to 'Vaciar Carrito', cart, method: :delete, data: { confirm: 'Are you sure?' } %>
