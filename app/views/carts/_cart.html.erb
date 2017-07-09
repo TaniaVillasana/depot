@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h2>Tu carrito</h2>
+<h2><%= t('.title') %></h2>
 <table>
 
 
@@ -18,5 +18,7 @@
 
 </table>
 
-<%= button_to 'Revisar carrito', new_order_path, method: :get %>
-<%= button_to 'Vaciar Carrito', cart, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= button_to t('.checkout'), new_order_path(locale: I18n.locale),
+              method: :get %>
+<%= button_to t('.empty'), cart, method: :delete,
+              data: { confirm: 'Are you sure?' } %>
