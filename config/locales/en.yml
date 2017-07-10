@@ -41,7 +41,7 @@ en:
 
   store:
       index:
-        title_html:  "Your Pragmatic Catalog"
+        title_html:  "i solemnly swear that i am up to no good"
         add_html:    "Add to Cart"
 
   carts:
